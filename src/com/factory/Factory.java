@@ -2,20 +2,17 @@ package com.factory;
 
 public class Factory {
 	
-   //use getCommunicationTool method to get the tool of a particular class.
-   public YourCommunicationTool getCommunicationTool (String toolName){
-      if(toolName == null){
+   //use deliver method to get required transport mode object
+   public Transport deliver (String transportMode){
+      if(transportMode == null){
          return null;
       }		
-      if(toolName.equalsIgnoreCase("HomePhone")){
-         return new HomePhone();         
-      } else if(toolName.equalsIgnoreCase("MobilePhone")){
-         return new MobilePhone();        
-      } else if(toolName.equalsIgnoreCase("WhatsApp")){
-         return new WhatsApp();
-      } else if(toolName.equalsIgnoreCase("GoogleVoice")){
-          return new GoogleVoice();
-       }           
+      if(transportMode.equalsIgnoreCase("Truck")){
+         return new Truck();         
+      } else if(transportMode.equalsIgnoreCase("Ship")){
+         return new Ship();   
+      }
+        
       return null;
    }
 }
