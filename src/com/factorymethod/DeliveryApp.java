@@ -1,4 +1,4 @@
-package com.factory;
+package com.factorymethod;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,19 +6,20 @@ import java.util.List;
 public class DeliveryApp {
 
    public static void main (String[] args) {
-      Factory factory = new Factory();
-
-      //get an object of Truck to deliver cargo
-      Transport transport1 = factory.deliver("Truck");
+	  // define the roadLogistics to get the Truck transport mode to deliver cargo
+      Logistics roadLogistics = new RoadLogistics();
+      Transport transport1 = roadLogistics.createTransport();
       ((Truck) transport1).fueling(); // fueling the truck
       List<Object> items1 = new ArrayList<Object>();
       items1.add("iPhone6");
       items1.add("iPhone7");      
-      ((Truck) transport1).loadCargo(items1); // loading cargo items   
+      ((Truck) transport1).loadCargo(items1); // loading cargo items
       transport1.deliver("1 Wall Street, NY, USA"); // deliver the cargo to given address
-      
-      //get an object of Ship to deliver cargo
-      Transport transport2 = factory.deliver("Ship");      
+            
+
+	  // define the seaLogistics to get the Ship transport mode to deliver cargo
+      Logistics shipLogistics = new SeaLogistics();
+      Transport transport2 = shipLogistics.createTransport();      
       ((Ship) transport2).fueling(); // fueling the truck
       List<Object> items2 = new ArrayList<Object>();
       items2.add("Samsung Galaxy 7");
