@@ -9,11 +9,10 @@ public class Ship implements Transport {
 	private int cruisingSpeed;
 	private int grossTonnage;
 	
-	public Ship() { 
-		// these details must come from any external means (say property file).
-		this.maxSpeed = 17; // in knots
-		this.cruisingSpeed = 10; // in knots
-		this.grossTonnage = 2000; // in tons
+	public Ship(int maxSpeed, int cruisingSpeed, int grossTonnage) { 
+		this.maxSpeed = maxSpeed;
+		this.cruisingSpeed = cruisingSpeed;
+		this.grossTonnage = grossTonnage;
 	}
 
 	@Override

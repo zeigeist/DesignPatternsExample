@@ -9,11 +9,10 @@ public class Truck implements Transport {
 	private String transmission;
 	private int grossTonnage;
 	
-	public Truck() { 
-		// these details must come from any external means (say property file).		
-		this.horsePower = 500; // in hp
-		this.transmission = "10-speed-automatic";
-		this.grossTonnage = 20; // in tons
+	public Truck(int horsePower, String transmission, int grossTonnage) { 
+		this.horsePower = horsePower;
+		this.transmission = transmission;
+		this.grossTonnage = grossTonnage; 
 	}
 
 	@Override
