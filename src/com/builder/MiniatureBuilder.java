@@ -1,7 +1,5 @@
 package com.builder;
 
-
-
 /**
  * Unlike other creational patterns, Builder can construct unrelated products,
  * which don't have the common interface.
@@ -9,26 +7,24 @@ package com.builder;
  * In this case we build a miniature for a building, using the same steps as we
  * built any building, house, villa or commercial tower. 
  */
-public class BuildingMiniatureBuilder implements Builder {
-	private Foundation foundation;
+public class MiniatureBuilder implements Builder {
 	private int colCount;
 	private int beamCount;
 	private int wallCount;
-	private Roofing roofing;
 	private int doorCount;
 	private BuildingType type;
-	private int storyCount;   
+	private int storyCount;
 	private int roomCount;
+	private MiniatureMaterial miniatureMaterial;
 	
 	public Miniature getResult() {		
-		return new Miniature(foundation, colCount, beamCount, wallCount, roofing, type, storyCount, roomCount, doorCount);
+		return new Miniature(miniatureMaterial, colCount, beamCount, wallCount, type, storyCount, roomCount, doorCount);
 	}
 
-	@Override
-	public void setFoundation(Foundation foundation) {
-		this.foundation = foundation;		
+	public void setMiniatureMaterial(MiniatureMaterial miniatureMaterial) {
+		this.miniatureMaterial = miniatureMaterial;
 	}
-
+	
 	@Override
 	public void setColumns(int colCount) {
 		this.colCount = colCount;
@@ -42,11 +38,6 @@ public class BuildingMiniatureBuilder implements Builder {
 	@Override
 	public void setWalls(int wallCount) {
 		this.wallCount = wallCount;
-	}
-
-	@Override
-	public void setRoofing(Roofing roofing) {
-		this.roofing = roofing;	
 	}
 
 	@Override

@@ -18,10 +18,13 @@ public class DemoClient {
         // Director is not aware and not dependent on concrete builders and
         // products.
         House house = houserBuilder.getResult();
+        house.setFoundation(Foundation.SHALLOW);
+        house.setRoofing(Roofing.WOOD);
         System.out.println("Building Built:\n" + house.getType());
-        BuildingMiniatureBuilder miniatureBuilder = new BuildingMiniatureBuilder();
+        MiniatureBuilder miniatureBuilder = new MiniatureBuilder();
         // Director may know several building recipes.
         director.buildHouse(miniatureBuilder);
+        miniatureBuilder.setMiniatureMaterial(MiniatureMaterial.CARDBOARD_PAPER);
         Miniature miniature = miniatureBuilder.getResult();
         System.out.println("\nMiniature House Built: \n" + miniature.print());      
 
@@ -29,9 +32,12 @@ public class DemoClient {
         VillaBuilder villaBuilder = new VillaBuilder();
         director.buildVilla(villaBuilder);
         Villa villa = villaBuilder.getResult();
+        villa.setFoundation(Foundation.SHALLOW);
+        villa.setRoofing(Roofing.CLAY);
         System.out.println("Building Built:\n" + villa.getType());
-        miniatureBuilder = new BuildingMiniatureBuilder();
+        miniatureBuilder = new MiniatureBuilder();
         director.buildVilla(miniatureBuilder);
+        miniatureBuilder.setMiniatureMaterial(MiniatureMaterial.CARDBOARD_PAPER);
         miniature = miniatureBuilder.getResult();
         System.out.println("\nMiniature Villa Built: \n" + miniature.print());
         
@@ -39,9 +45,12 @@ public class DemoClient {
         CommercialTowerBuilder ctBuilder = new CommercialTowerBuilder();
         director.buildCommercialTower(ctBuilder);
         CommercialTower ct = ctBuilder.getResult();
+        ct.setFoundation(Foundation.DEEP);
+        ct.setRoofing(Roofing.METAL);
         System.out.println("Building Built:\n" + ct.getType());
-        miniatureBuilder = new BuildingMiniatureBuilder();
+        miniatureBuilder = new MiniatureBuilder();
         director.buildCommercialTower(miniatureBuilder);
+        miniatureBuilder.setMiniatureMaterial(MiniatureMaterial.PLASTIC);
         miniature = miniatureBuilder.getResult();
         System.out.println("\nMiniature Villa Built: \n" + miniature.print());
     }

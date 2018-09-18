@@ -27,9 +27,21 @@ public class Villa {
         this.doorCount = doorCount; 
     }
 
+    public void setFoundation(Foundation foundation) {
+		this.foundation = foundation;
+	}
+    
 	public Foundation getFoundation() {
 		return foundation;
 	}
+
+	public Roofing getRoofing() {
+		return roofing;
+	}
+
+    public void setRoofing(Roofing roofing) {
+		this.roofing = roofing;
+	} 
 
 	public int getColCount() {
 		return colCount;
@@ -41,10 +53,6 @@ public class Villa {
 
 	public int getWallCount() {
 		return wallCount;
-	}
-
-	public Roofing getRoofing() {
-		return roofing;
 	}
 
 	public BuildingType getType() {

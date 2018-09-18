@@ -8,10 +8,8 @@ package com.builder;
 public class Director {
 
     public void buildHouse(Builder builder) {
-        builder.setFoundation(Foundation.SHALLOW);
         builder.setColumns(12);
-        builder.setBeams(24);
-        builder.setRoofing(Roofing.WOOD);
+        builder.setBeams(24);        
         builder.setBuildingType(BuildingType.HOUSE);
         builder.setWalls(20);
         builder.setNumberOfStories(1);
@@ -20,10 +18,8 @@ public class Director {
     }
 
     public void buildVilla(Builder builder) {
-        builder.setFoundation(Foundation.SHALLOW);
         builder.setColumns(75);
         builder.setBeams(150);
-        builder.setRoofing(Roofing.CLAY);
         builder.setBuildingType(BuildingType.VILLA);
         builder.setWalls(75);
         builder.setNumberOfStories(3);
@@ -32,10 +28,8 @@ public class Director {
     }
 
     public void buildCommercialTower(Builder builder) {
-        builder.setFoundation(Foundation.DEEP);
         builder.setColumns(500);
         builder.setBeams(1000);
-        builder.setRoofing(Roofing.METAL);
         builder.setBuildingType(BuildingType.COMMERCIAL_TOWER);
         builder.setWalls(2000);
         builder.setNumberOfStories(20);

@@ -18,7 +18,6 @@ public class CommercialTowerBuilder implements Builder {
 		return new CommercialTower(foundation, colCount, beamCount, wallCount, roofing, type, storyCount, roomCount, doorCount);
 	}
 
-	@Override
 	public void setFoundation(Foundation foundation) {
 		this.foundation = foundation;		
 	}
@@ -38,7 +37,6 @@ public class CommercialTowerBuilder implements Builder {
 		this.wallCount = wallCount;
 	}
 
-	@Override
 	public void setRoofing(Roofing roofing) {
 		this.roofing = roofing;	
 	}

@@ -18,11 +18,14 @@ public class HouseBuilder implements Builder {
 		return new House(foundation, colCount, beamCount, wallCount, roofing, type, storyCount, roomCount, doorCount);
 	}
 
-	@Override
 	public void setFoundation(Foundation foundation) {
 		this.foundation = foundation;		
 	}
 
+	public void setRoofing(Roofing roofing) {
+		this.roofing = roofing;	
+	}
+	
 	@Override
 	public void setColumns(int colCount) {
 		this.colCount = colCount;
@@ -36,12 +39,7 @@ public class HouseBuilder implements Builder {
 	@Override
 	public void setWalls(int wallCount) {
 		this.wallCount = wallCount;
-	}
-
-	@Override
-	public void setRoofing(Roofing roofing) {
-		this.roofing = roofing;	
-	}
+	}	
 
 	@Override
 	public void setRooms(int roomCount) {
